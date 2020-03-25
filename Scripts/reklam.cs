@@ -18,11 +18,10 @@ public class reklam : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             reklamKontrol = this;
 
-            /// 1. aşamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                 #if UNITY_ANDROID
-                            string appId = "ca-app-pub-4057881438378682~5730025638";
+                            string appId = "--------------------";
                 #elif UNITY_IPHONE
-                                        string appId = "ca-app-pub-3940256099942544~1458002511";
+                                        string appId = "--------------";
                 #else
                                         string appId = "unexpected_platform";
                 #endif
@@ -30,12 +29,11 @@ public class reklam : MonoBehaviour
             // Initialize the Google Mobile Ads SDK.
             MobileAds.Initialize(appId);
 
-            /// 2. aşamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
             #if UNITY_ANDROID
 
-            string adUnitId = "ca-app-pub-4057881438378682/7655257494";
+            string adUnitId = "-----------------";
             #elif UNITY_IPHONE
-                                    string adUnitId = "ca-app-pub-3940256099942544/4411468910";
+                                    string adUnitId = "--------------";
             #else
                                     string adUnitId = "unexpected_platform";
             #endif
@@ -43,15 +41,12 @@ public class reklam : MonoBehaviour
 
             interstitial = new InterstitialAd(adUnitId);
 
-            /// 3. aşamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            /// 
-
+           
             AdRequest request = new AdRequest.Builder()/*.AddTestDevice(AdRequest.TestDeviceSimulator).AddTestDevice("2077ef9a63d2b398840261c8221a0c9b")*/.Build();
 
             interstitial.LoadAd(request);
 
-            /// 4. aşamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-
+            
         }
         else
         {
